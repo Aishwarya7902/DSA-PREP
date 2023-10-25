@@ -39,3 +39,34 @@ class Solution {
         
     }
 };
+
+/*
+WITHOUT MAKING ANOTHER GRAPH
+*/
+class Solution {
+  public:
+    int n;
+    void dfs(int u,vector<vector<int>> &adj,vector<bool>&vis){
+        vis[u]=true;
+        for(int v=0;v<n;v++){
+            if(!vis[v] && adj[u][v]==1)
+             dfs(v,adj,vis);
+        }
+    }
+    int numProvinces(vector<vector<int>> adj, int V) {
+        // code here
+        n=adj.size();
+       
+        
+        int cnt=0;
+        vector<bool>vis(n,false);
+        for(int i=0;i<n;i++){
+            if(!vis[i]){
+                dfs(i,adj,vis);
+                cnt++;
+            }
+        }
+        return cnt;
+        
+    }
+};
