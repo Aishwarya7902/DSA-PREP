@@ -56,3 +56,45 @@ public:
         
     }
 };
+
+/*
+
+using DFS
+*/
+
+class Solution {
+public:
+    
+    bool dfs(int u,unordered_map<int,vector<int>>&adj,vector<bool>&vis,vector<bool>&recursion){
+        vis[u]=true;
+        recursion[u]=true;
+        for(int &v:adj[u]){
+            if(!vis[v]){
+                if(dfs(v,adj,vis,recursion))return true;
+            }
+            else if(recursion[v])return true;
+        }
+        recursion[u]=false;
+        return false;
+    }
+    bool canFinish(int numCourses, vector<vector<int>>& prerequisites) {
+        unordered_map<int,vector<int>>adj;
+        vector<bool>vis(numCourses,false);
+        vector<bool>recursion(numCourses,false);
+        
+        //making of map
+        for(int i=0;i<prerequisites.size();i++){
+            int v=prerequisites[i][0];
+            int u=prerequisites[i][1];
+            adj[u].push_back(v);
+        }
+
+        for(int i=0;i<numCourses;i++){
+            if(!vis[i]){
+                if(dfs(i,adj,vis,recursion))return false;
+            }
+        }
+        return true;
+        
+    }
+};
