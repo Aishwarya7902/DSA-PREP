@@ -91,7 +91,7 @@ public:
 
         for(int i=0;i<numCourses;i++){
             if(!vis[i]){
-                if(dfs(i,adj,vis,recursion))return false;
+                if(dfs(i,adj,vis,recursion))return false; //If cycle is formed then it is not possible to complete the course ....hence we return false
             }
         }
         return true;
