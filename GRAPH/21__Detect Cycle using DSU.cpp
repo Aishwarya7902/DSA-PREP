@@ -1,6 +1,8 @@
 PROBLEM:https://practice.geeksforgeeks.org/problems/detect-cycle-using-dsu/1
 VIDEO:https://www.youtube.com/watch?v=0X0lEtTkk-8&list=PLpIkg8OmuX-LZB9jYzbbZchk277H5CbdY&index=20
 
+Company Tags : Google, Microsoft
+
 /*
   Expected Time Complexity: O(V + E)
   Expected Space Complexity: O(V)
