@@ -127,3 +127,58 @@ public:
 
     }
 };
+
+
+/*
+bfs
+tc
+sc
+*/
+
+class Solution {
+public:
+    void bfs(int u,unordered_map<int,vector<int>>&adj,vector<bool>&visited,long long &size){
+        visited[u]=true;
+        queue<int>q;
+        q.push(u);
+        while(!q.empty()){
+            int curr=q.front();
+            size++;
+            q.pop();
+            for(int &v:adj[curr]){
+                if(!visited[v])
+                {
+                    visited[v]=true;
+                    q.push(v);
+                }
+            }
+        }
+    }
+    long long countPairs(int n, vector<vector<int>>& edges) {
+      //making of map
+      unordered_map<int,vector<int>>adj;
+      for(auto &vec:edges){
+          int u=vec[0];
+          int v=vec[1];
+          // since it is  bidirectional graph
+          adj[u].push_back(v);
+          adj[v].push_back(u);
+      }
+    // making of visited vector
+      vector<bool>visited(n,false);
+
+      long long remainingNodes=n;
+      long long result=0;
+      for(int i=0;i<n;i++){
+          if(!visited[i]){
+              long long size=0;
+              bfs(i,adj,visited,size);
+              result+=(size)*(remainingNodes-size);
+              remainingNodes-=size;
+          }
+
+      }
+     return result;
+
+    }
+};
