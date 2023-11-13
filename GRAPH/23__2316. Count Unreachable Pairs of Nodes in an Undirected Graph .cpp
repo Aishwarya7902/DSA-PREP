@@ -85,7 +85,8 @@ public:
 };
 
 /*
-using dfs
+using dfs 
+video : https://www.youtube.com/watch?v=kOt2VNsU0FE
 tc
 sc
 */
@@ -130,7 +131,8 @@ public:
 
 
 /*
-bfs
+using bfs
+video: https://www.youtube.com/watch?v=kOt2VNsU0FE
 tc
 sc
 */
