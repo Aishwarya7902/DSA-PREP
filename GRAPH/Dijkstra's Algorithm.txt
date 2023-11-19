@@ -1,0 +1,13 @@
+what is Dijkstra's Algorithm?
+
+source node se kisi particular node pe jane me minimum kitne paise lagenge....similarly we do it for every node.
+(Itna simple to hai Dijkstra's Algorithm😅)
+
+->initally sare nodes pe jane me inifinity lagega
+
+->source se source tak jane me to 0 rupee lagega...push (dist,node) in min heap
+
+->why min heap----coz we want minimum distance na.
+
+->now start taking out minimum node which will be always at top and explore the adjacent nodes.......if u get something better , update in result and push in min heap,
+explore further. 
