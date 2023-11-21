@@ -2,7 +2,7 @@ PROBLEM:https://practice.geeksforgeeks.org/problems/implementing-dijkstra-set-1-
 VIDEO:https://www.youtube.com/watch?v=xQ3vjWwFRuI&list=PLpIkg8OmuX-LZB9jYzbbZchk277H5CbdY&index=25
 
 /*
-  TC:
+  TC: V*(logv+E*logv)
   SC:
 
 */
