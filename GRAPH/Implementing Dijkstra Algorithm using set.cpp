@@ -2,7 +2,7 @@
 Answer : coz when we solve using priority queue then we may have to process the same node with a higher cost in the latter part...
 now the thing is if u already have a lower cost to reach that node , then why are u considering the higher cost?
 hence we delete it ....which is possible only in set not in priority queue
-
+TC : TC: V*(logv+E*logv)
 
 */
 
