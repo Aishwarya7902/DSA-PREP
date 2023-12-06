@@ -1,1 +1,17 @@
+☑️Bellman ford algo is used to find minimum distance from source to all other node.
 
+☑️Now you ask me that Dijkstra's did the same na .......then why to learn Bellman,
+☑️The ans is , Dijkstra's can't work when we have negative edges or negative cycle.
+☑️If you want to learn more watch this:
+https://www.youtube.com/watch?v=5yTkgeTqKK0&list=PLpIkg8OmuX-LZB9jYzbbZchk277H5CbdY&index=31
+
+☑️Here comes Bellman Ford to rescue us..................it can work on negative edges too.....provided it is a directed graph
+
+☑️Note 💀: Bellman Ford can work only in  directed graph
+
+☑️Bellman ford says relax the edges for (v-1) times , and you will get the minimum ditance from source to all other nodes.
+
+
+☑️To detect -ve cycle
+after (v-1) relaxations......just relax for 1 more time
+if u get any updataions....it means there is negative cycle.
