@@ -15,3 +15,11 @@ https://www.youtube.com/watch?v=5yTkgeTqKK0&list=PLpIkg8OmuX-LZB9jYzbbZchk277H5C
 ☑️To detect -ve cycle
 after (v-1) relaxations......just relax for 1 more time
 if u get any updataions....it means there is negative cycle.
+
+
+
+☑️ FOR Dijkstra's
+Tc: O(ElogV)
+
+☑️ FOR Bellman
+Tc: O(EV)
