@@ -1,0 +1,5 @@
+✅Kruskal says simple thing:
+1.sort the edges in ascending order of wt
+2.process the edges one by one.
+3.While processing the edges...........if (u,v) is already connected.......continue
+else connect them . (USE DSU TO CHECK IF CONNECTED OR NOT ....ELSE UNION THEM)
