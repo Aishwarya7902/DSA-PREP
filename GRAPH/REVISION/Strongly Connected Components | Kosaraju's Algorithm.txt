@@ -1,0 +1,6 @@
+✅ STEP 1: store order of dfs in stack.....Topo sort
+
+✅ STEP 2 : reverse the graph
+
+✅ STEP 3: CALL DFS BASED ON STACK ORDER
+
