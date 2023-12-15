@@ -4,3 +4,8 @@
 
 ✅ STEP 3: CALL DFS BASED ON STACK ORDER
 
+
+💖Ek order me dfs call karna hai ...to kyu na toposort ke order me kar lo
+
+💖reversing all the edges won't affect for those who are strongly connected
+
