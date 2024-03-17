@@ -47,3 +47,47 @@ public:
         
     }
 };
+
+/*
+OPTIMISATION
+TC:O(N^2)
+SC:O(1)
+  */
+
+class Solution{
+public:
+   void addAtBottom(stack<int> &St,int element){
+       if(St.size()==0){
+           St.push(element);
+           return;
+       }
+       int top=St.top();
+       St.pop();
+       addAtBottom(St,element); //faith
+       
+       St.push(top);
+       
+   }
+   
+    void Reverse(stack<int> &St){
+        if(!St.size())return;
+        
+        int top=St.top();// ek element ko nikal diya 
+        St.pop();
+        Reverse(St); // recursion ko ek sub problem de diya
+        /*
+        now recursion will provide stack like this
+        3
+        2
+        1
+        7
+        
+        Now we just have to add 6 in the bottom
+        
+        For that transfer call the function
+        */
+        
+        addAtBottom(St,top);
+        
+        
+    }
