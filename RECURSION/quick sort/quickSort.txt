@@ -1,0 +1,21 @@
+Problem Link :https://www.geeksforgeeks.org/problems/quick-sort/1
+Video :https://www.youtube.com/watch?v=4eEWCQveqk8&list=PLpIkg8OmuX-IBcXsfITH5ql0Lqci1MYPM&index=9
+
+There are three steps of this algo:
+
+1.pivot selection
+2.partioning
+3.Recursion
+
+
+Tc: 
+Best and Avg case: O(nlogn)
+Worst : O(n^2)
+
+Sc :
+o(1) //auxiliary
+//Recursive stack space
+
+Best : O(logn)
+Worst : O(n)
+
