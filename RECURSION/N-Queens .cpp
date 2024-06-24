@@ -52,4 +52,6 @@ public:
     }
 };
 
+/*approach 2
+  */
 
