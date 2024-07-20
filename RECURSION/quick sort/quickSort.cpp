@@ -1,4 +1,12 @@
+/*
+    TIME COMPLEXITY
+    worst case :o(n^2) //similar to merge sort
+    Avg case : o(nlogn) //similar to merge sort
 
+    NOTE : quick sort is preferred over merge sort coz it does not take any extra array
+*/
+  
+    
 
 class Solution
 {
@@ -21,13 +29,15 @@ class Solution
        
        int pivot=arr[high];
        
-       int pi=low;
-       for(int i=low;i<high;i++){
-           if(arr[i]<pivot){
-               swap(arr[i],arr[pi]);
+       int pi=low-1;
+       for(int j=low;j<high;j++){
+           if(arr[j]<pivot){
                pi++;
+               swap(arr[j],arr[pi]);
+               
            }
        }
+       pi++
        swap(arr[pi],arr[high]);
        return pi;
     }
