@@ -35,3 +35,35 @@ public:
         return result;
     }
 };
+
+/*
+METHOD 2
+  TC:
+  SC:
+  */
+
+class Solution {
+public:
+    void solve(vector<int>& nums,int indx,vector<vector<int>>&result){
+        int n=nums.size();
+        if(indx==n){
+            result.push_back(nums);
+            return;
+        }
+        for(int i=indx;i<n;i++)
+        {   
+              swap(nums[i],nums[indx]);
+              solve(nums,indx+1,result);
+              swap(nums[i],nums[indx]);
+
+            
+        }
+    }
+    vector<vector<int>> permute(vector<int>& nums) {
+        
+        vector<vector<int>>result;
+        solve(nums,0,result);
+
+        return result;
+    }
+};
