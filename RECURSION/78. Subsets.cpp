@@ -3,7 +3,7 @@ PROBLEM:https://leetcode.com/problems/subsets/description/
 /*
   APPROACH 1
   TC: O(2^N) // at every place we have two choices
-  SC:
+  SC: o(n) curr  + o(n) recusion stack space
   */
 
 class Solution {
