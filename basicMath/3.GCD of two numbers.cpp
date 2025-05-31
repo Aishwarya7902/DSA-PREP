@@ -34,3 +34,27 @@ class Solution {
         return result;
     }
 };
+
+
+/*
+
+  OPTIMISATION USING
+  Euclidean algorithm
+  gcd(a,b)=gcd(b,a%b)  untill b completly divides a 
+  For clear understanding  see the video : https://www.youtube.com/watch?v=utZcJ0leZ_g&t=313s
+
+  Time Complexity: O(log min(a, b))
+  Auxiliary Space: O(log (min(a,b)))
+*/
+
+
+class Solution {
+  public:
+    int gcd(int a, int b) {
+        // code here
+        if(a%b==0)return b;
+        return gcd(b,a%b);
+    }
+};
+
+
