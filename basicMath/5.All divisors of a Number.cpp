@@ -34,7 +34,8 @@ class Solution {
     void print_divisors(int n) {
         // Code here.
         vector<int>temp;
-        for(int i=1;i<=sqrt(n);i++){
+     //TC : o(sqrt(n))
+        for(int i=1;i*i<=n;i++){
             if(n%i==0){
                temp.push_back(i);
                 if(n/i !=i){
@@ -43,7 +44,10 @@ class Solution {
             }
         }
         //since we have to print in ascending order
+        //TC : o( m logm ) here m is the number of factors
         sort(temp.begin(),temp.end());
+
+         //TC : o( m ) here m is the number of factors
         for(int i=0;i<temp.size();i++)
         {
             cout<<temp[i]<<" ";
