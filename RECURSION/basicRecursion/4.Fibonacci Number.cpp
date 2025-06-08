@@ -1,0 +1,19 @@
+// PROBLEM :https://leetcode.com/problems/fibonacci-number/description/
+
+/*
+  BRUTE FORCE
+  TC: O(2^n) exponential in nature
+  SC: O(2^n) exponential in nature
+
+*/
+
+class Solution {
+public:
+    int fib(int n) {
+         if(n==0)return 0;
+
+         if(n==1)return 1;
+
+         return fib(n-1)+fib(n-2);
+    }
+};
