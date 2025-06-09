@@ -1,0 +1,4 @@
+ storing / fetching 
+
+map - o(logn)
+unordered_map = o(1)
