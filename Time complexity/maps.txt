@@ -1,4 +1,5 @@
  storing / fetching 
 
-map - o(logn)
-unordered_map = o(1)
+map - best/average/worst o(logn)
+unordered_map =  best/average   =o(1)
+                 worst   =o(n)
