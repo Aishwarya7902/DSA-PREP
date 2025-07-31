@@ -24,10 +24,10 @@ public:
             vector<int>sorted(n);
             int indx=0;
             for(int i=r;i<n;i++){
-                sorted[indx++]=nums[i];
+                sorted[i]=nums[indx++];
             }
             for(int i=0;i<r;i++){
-                sorted[indx++]=nums[i];
+                sorted[i]=nums[indx++];
             }
 
             if(isSorted(sorted))return true;
