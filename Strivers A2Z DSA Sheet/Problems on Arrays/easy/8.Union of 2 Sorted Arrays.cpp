@@ -36,3 +36,60 @@ class Solution {
         return result;
     }
 };
+
+
+/*
+  optimization
+
+  tc: O(m + n), where m = a.size() and n = b.size()
+  sc:o(1)
+  
+*/
+
+class Solution {
+  public:
+    vector<int> findUnion(vector<int> &a, vector<int> &b) {
+        // code here
+        vector<int>result;
+        
+        int m=a.size();
+        int n=b.size();
+        
+        int i=0,j=0;
+        while(i<m && j<n){
+            
+            if(a[i]<=b[j]){
+                
+            if(result.size()==0 || a[i]!=result.back()){
+                result.push_back(a[i]);
+               
+            }
+             i++;
+            }
+            
+            else{
+                if(result.size()==0 || b[j]!=result.back()){
+                result.push_back(b[j]);
+                
+            }
+            j++;
+            }
+        }
+        
+        while(i<m){
+           if (result.empty() || a[i] != result.back())
+                result.push_back(a[i]);
+            ++i;
+        }
+        
+        while(j<n){
+            if (result.empty() || b[j] != result.back())
+                result.push_back(b[j]);
+            ++j;
+        }
+        
+        return result;
+        
+        
+    }
+};
