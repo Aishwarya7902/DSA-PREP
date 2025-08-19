@@ -28,4 +28,50 @@ class Solution {
     }
 };
 
+/*
+better 
 
+tc:o(n^logn)
+sc:o(n)
+NOTE :BETTER SOLUTION WORKS FOR BOTH +VE AND -VE Numbers
+*/
+
+class Solution {
+  public:
+    int longestSubarray(vector<int>& arr, int k) {
+        // code here
+        map<long long,int>mp;
+        long long sum=0;
+        int maxLen=0;
+
+    for(int i=0;i<arr.size();i++){
+         sum+=arr[i];
+
+         if(sum==k){
+             maxLen=max(maxLen,i+1);
+         }
+
+         long long rem=sum-k;
+         if(mp.find(rem)!=mp.end()){
+             int len= i-mp[rem];
+
+             maxLen=max(maxLen,len);
+         }
+
+         if(mp.find(sum)==mp.end()){
+             mp[sum]=i;
+
+         }
+        
+    }
+    return maxLen;
+    }
+};
+
+
+/*
+best
+
+
+NOTE :BEST SOLUTION WORKS FOR BOTH +VE Numbers
+*/
