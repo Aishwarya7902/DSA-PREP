@@ -71,7 +71,34 @@ class Solution {
 
 /*
 best
-
+TC:O(2n)
+SC:O(1)
 
 NOTE :BEST SOLUTION WORKS FOR BOTH +VE Numbers
 */
+class Solution {
+  public:
+    int longestSubarray(vector<int>& arr, int k) {
+        // code here
+        int n=arr.size();
+        long long sum=0;
+        int maxLen=0;
+        
+        int left=0,right=0;
+        while(right<n)
+        {
+            sum+=arr[right];
+            while(left <= right && sum>k){
+                sum-=arr[left];
+                left++;
+            }
+            
+            if(sum==k){
+                maxLen=max(maxLen,right-left+1);
+            }
+            
+            right++;
+        }
+        return maxLen;
+    }
+};
