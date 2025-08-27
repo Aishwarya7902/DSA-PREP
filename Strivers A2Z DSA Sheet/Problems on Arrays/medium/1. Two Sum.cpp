@@ -55,3 +55,31 @@ public:
         return result;
     }
 };
+
+/*
+TWO POINTER SOLUTION
+best solution (only if ques says return true / false if two numbers add up to target ...not asking for index only then this solution is valid
+tc:o(nlogn) as we are sorting
+sc:o(1)
+*/
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int>result;
+        int n=nums.size();
+        sort(begin(nums),end(nums));
+        int left=0,right=n-1;
+        while(left<right){
+            int sum=nums[left]+nums[right]
+            if(sum==target){
+                result.push_back(left);
+                result.push_back(right);
+                break;
+            }
+            else if(sum<target)left++;
+            else right--;
+        }
+        return result;
+    }
+};
