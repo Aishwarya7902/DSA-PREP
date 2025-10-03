@@ -1,0 +1,3 @@
+to find any element of pascal triangle at a paticular row , R and at a column C
+
+the formula will be (r−1)C(c−1)
