@@ -36,3 +36,50 @@ public:
         return result;
     }
 };
+
+/*
+best
+tc:o(n)
+sc:o(1)
+*/
+
+class Solution {
+public:
+    vector<int> majorityElement(vector<int>& nums) {
+        vector<int> result;
+        int n=nums.size();
+         
+        int count1=0,elem1;
+        int count2=0,elem2;
+
+        for(int i=0;i<n;i++){
+            if(count1==0 && nums[i]!=elem2){
+                count1=1;
+                elem1=nums[i];
+            }
+            else if(count2==0 && nums[i]!=elem1){
+                count2=1;
+                elem2=nums[i];
+            }
+            else if(nums[i]==elem1)count1++;
+            else if(nums[i]==elem2)count2++;
+            else{
+                count1--;
+                count2--;
+            }
+        }
+        count1=0,count2=0;
+        for(int i=0;i<n;i++){
+             if(nums[i]==elem1)count1++;
+        }
+        for(int i=0;i<n;i++){
+             if(nums[i]==elem2)count2++;
+        }
+        if(count1>floor(n/3))result.push_back(elem1);
+        if(count2>floor(n/3))result.push_back(elem2);
+        
+
+       return result;   
+         
+    }
+};
