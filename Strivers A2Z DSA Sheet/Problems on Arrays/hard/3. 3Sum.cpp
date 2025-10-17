@@ -39,6 +39,37 @@ public:
 };
 
 /*
+
+better....gives TLE
+tc:o(n^2 * log(m)) where m=size of set ,set<int>mp
+sc: o(n) + o(no of ans)*2 ...one for set and one for result vector
+
+*/
+
+class Solution {
+public:
+    vector<vector<int>> threeSum(vector<int>& nums) {
+        int n=nums.size();
+        set<vector<int>>st;
+        for(int i=0;i<n;i++){
+            set<int>mp;
+            for(int j=i+1;j<n;j++){
+                int sum = nums[i]+nums[j];
+                if(mp.find(-sum)!=mp.end()){
+                   vector<int>curr({nums[i],-sum,nums[j]});
+                   sort(begin(curr),end(curr));
+                   st.insert(curr) ;
+                }
+                mp.insert(nums[j]);
+            }
+        }
+
+        vector<vector<int>> result(st.begin(),st.end());
+        return result;
+    }
+};
+
+/*
 optimisation
 tc:o(nlogn +n^2)
 sc:o(1)
