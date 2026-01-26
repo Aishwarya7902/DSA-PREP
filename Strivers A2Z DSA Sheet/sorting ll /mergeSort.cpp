@@ -18,46 +18,52 @@ SPACE COMPLEXITY :O(1)
 class Solution {
   public:
   
-    void merge(vector<int>& arr, int l,int mid, int r){
-        vector<int>temp(r-l+1);
+    void merge(vector<int>& arr, int low,int mid, int high){
         
-        int left=l,right=mid+1,k=0;
-        while(left<=mid && right<=r){
+        int left=low;
+        int right=mid+1;
+        
+        vector<int>temp;
+        
+        while(left<=mid && right <=high){
+            
             if(arr[left]<=arr[right]){
-                temp[k]=arr[left];
+                temp.push_back(arr[left]);
                 left++;
             }
             else{
-                temp[k]=arr[right];
+                temp.push_back(arr[right]);
                 right++;
             }
-            
-            k++;
         }
         
         while(left<=mid){
-                temp[k]=arr[left];
-                left++; 
-                k++;
+             temp.push_back(arr[left]);
+             left++;
         }
         
-        while(right<=r){
-                temp[k]=arr[right];
-                right++; 
-                k++;
+        while(right<=high){
+             temp.push_back(arr[right]);
+             right++;
         }
         
-        for(int i=l;i<=r;i++){
-            arr[i]=temp[i-l];
+        for(int i=low;i<=high;i++){
+            arr[i]=temp[i-low];
         }
+        
     }
     void mergeSort(vector<int>& arr, int l, int r) {
         // code here
+        
         if(l>=r)return;
         
-        int mid = (l+r)/2;
+        int mid = l + (r-l)/2;
+        
         mergeSort(arr,l,mid);
         mergeSort(arr,mid+1,r);
+        
         merge(arr,l,mid,r);
+        
+        
     }
 };
